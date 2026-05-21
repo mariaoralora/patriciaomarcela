@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Eres Marcela Valencia o Patricia Fernández?</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f7d7e8, #f6f0ff, #d9f0ff);
+      color: #2b2230;
+      padding: 25px;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 25px;
+      padding: 30px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #9b2c6f;
+      font-size: 2rem;
+    }
+
+    .intro {
+      text-align: center;
+      font-size: 1.05rem;
+      margin-bottom: 30px;
+      color: #5a4a60;
+    }
+
+    .question {
+      background: #fff6fb;
+      border: 2px solid #f1c4dd;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 18px;
+    }
+
+    .question h3 {
+      margin-top: 0;
+      color: #6d2454;
+    }
+
+    label {
+      display: block;
+      background: white;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 12px;
+      cursor: pointer;
+      border: 1px solid #ead7e5;
+      transition: 0.2s;
+    }
+
+    label:hover {
+      background: #fde9f4;
+      transform: scale(1.01);
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 18px;
+      background: #b83280;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 25px;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #8f2866;
+      transform: scale(1.02);
+    }
+
+    #result {
+      margin-top: 30px;
+      padding: 25px;
+      border-radius: 20px;
+      text-align: center;
+      display: none;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .marcela {
+      background: #f3e8ff;
+      border: 3px solid #9b5de5;
+    }
+
+    .patricia {
+      background: #fff0f6;
+      border: 3px solid #ff69b4;
+    }
+
+    .mixta {
+      background: #fff8dc;
+      border: 3px solid #d4a017;
+    }
+
+    .result-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      color: #6b5d70;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>¿Eres Marcela Valencia o Patricia Fernández?</h1>
+    <p class="intro">
+      Responde este test inspirado en <strong>Betty la fea</strong> y descubre si tienes más energía de Marcela Valencia o de Patricia Fernández.
+    </p>
+
+    <form id="quizForm">
+      <div class="question">
+        <h3>1. Cuando hay un problema, tú normalmente...</h3>
+        <label><input type="radio" name="q1" value="marcela"> Tomas el control y quieres resolverlo bien.</label>
+        <label><input type="radio" name="q1" value="patricia"> Haces un comentario gracioso para bajar la tensión.</label>
+        <label><input type="radio" name="q1" value="marcela"> Te molestas si los demás no hacen las cosas como deben.</label>
+        <label><input type="radio" name="q1" value="patricia"> Te enteras de todo el chisme mientras “ayudas”.</label>
+      </div>
+
+      <div class="question">
+        <h3>2. En el amor eres más...</h3>
+        <label><input type="radio" name="q2" value="marcela"> Intensa, seria y muy leal.</label>
+        <label><input type="radio" name="q2" value="patricia"> Coqueta, dramática y un poco exagerada.</label>
+        <label><input type="radio" name="q2" value="marcela"> Orgullosa, aunque por dentro te importe mucho.</label>
+        <label><input type="radio" name="q2" value="patricia"> De las que cuentan todo a sus amigas.</label>
+      </div>
+
+      <div class="question">
+        <h3>3. Tu estilo sería más...</h3>
+        <label><input type="radio" name="q3" value="marcela"> Elegante, ejecutivo y fino.</label>
+        <label><input type="radio" name="q3" value="patricia"> Llamativo, divertido y con mucha personalidad.</label>
+        <label><input type="radio" name="q3" value="marcela"> Tacones, blazer y actitud de jefa.</label>
+        <label><input type="radio" name="q3" value="patricia"> Algo brillante, fashion y medio extra.</label>
+      </div>
+
+      <div class="question">
+        <h3>4. Si alguien te cae mal...</h3>
+        <label><input type="radio" name="q4" value="marcela"> Lo miras con una cara que lo dice todo.</label>
+        <label><input type="radio" name="q4" value="patricia"> Haces un comentario indirecto pero clarísimo.</label>
+        <label><input type="radio" name="q4" value="marcela"> Intentas mantener la clase, pero se te nota.</label>
+        <label><input type="radio" name="q4" value="patricia"> Lo comentas con tu amiga de confianza.</label>
+      </div>
+
+      <div class="question">
+        <h3>5. En tu grupo de amigas eres...</h3>
+        <label><input type="radio" name="q5" value="marcela"> La que pone orden.</label>
+        <label><input type="radio" name="q5" value="patricia"> La que tiene los mejores cuentos.</label>
+        <label><input type="radio" name="q5" value="marcela"> La que aconseja con seriedad.</label>
+        <label><input type="radio" name="q5" value="patricia"> La que exagera todo y hace reír.</label>
+      </div>
+
+      <div class="question">
+        <h3>6. Tu mayor defecto podría ser...</h3>
+        <label><input type="radio" name="q6" value="marcela"> Ser orgullosa.</label>
+        <label><input type="radio" name="q6" value="patricia"> Ser chismosa.</label>
+        <label><input type="radio" name="q6" value="marcela"> Querer controlar todo.</label>
+        <label><input type="radio" name="q6" value="patricia"> Dramatizar cosas pequeñas.</label>
+      </div>
+
+      <div class="question">
+        <h3>7. Si hay una fiesta o reunión...</h3>
+        <label><input type="radio" name="q7" value="marcela"> Llegas bien arreglada y con presencia.</label>
+        <label><input type="radio" name="q7" value="patricia"> Llegas lista para hablar con todo el mundo.</label>
+        <label><input type="radio" name="q7" value="marcela"> Te importa verte impecable.</label>
+        <label><input type="radio" name="q7" value="patricia"> Terminas sabiendo todo lo que pasó.</label>
+      </div>
+
+      <div class="question">
+        <h3>8. En una discusión tú...</h3>
+        <label><input type="radio" name="q8" value="marcela"> Defiendes tu punto con firmeza.</label>
+        <label><input type="radio" name="q8" value="patricia"> Sueltas una frase icónica.</label>
+        <label><input type="radio" name="q8" value="marcela"> Te cuesta aceptar que no tienes razón.</label>
+        <label><input type="radio" name="q8" value="patricia"> Te haces la digna, pero sigues hablando del tema.</label>
+      </div>
+
+      <div class="question">
+        <h3>9. ¿Qué frase va más contigo?</h3>
+        <label><input type="radio" name="q9" value="marcela"> “Eso no se hace.”</label>
+        <label><input type="radio" name="q9" value="patricia"> “Amiga, te tengo un chisme.”</label>
+        <label><input type="radio" name="q9" value="marcela"> “Yo merezco respeto.”</label>
+        <label><input type="radio" name="q9" value="patricia"> “Ay, tan divino.”</label>
+      </div>
+
+      <div class="question">
+        <h3>10. Si fueras personaje de novela, serías...</h3>
+        <label><input type="radio" name="q10" value="marcela"> La elegante que sufre, pero no se deja.</label>
+        <label><input type="radio" name="q10" value="patricia"> La divertida que siempre roba cámara.</label>
+        <label><input type="radio" name="q10" value="marcela"> La intensa con actitud de protagonista.</label>
+        <label><input type="radio" name="q10" value="patricia"> La amiga caótica que todos recuerdan.</label>
+      </div>
+
+      <button type="button" onclick="calculateResult()">Ver mi resultado</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateResult() {
+      const totalQuestions = 10;
+      let marcela = 0;
+      let patricia = 0;
+
+      for (let i = 1; i <= totalQuestions; i++) {
+        const answer = document.querySelector(`input[name="q${i}"]:checked`);
+
+        if (!answer) {
+          alert("Responde todas las preguntas antes de ver el resultado.");
+          return;
+        }
+
+        if (answer.value === "marcela") {
+          marcela++;
+        } else {
+          patricia++;
+        }
+      }
+
+      const resultDiv = document.getElementById("result");
+      resultDiv.style.display = "block";
+      resultDiv.className = "";
+
+      if (marcela > patricia) {
+        resultDiv.classList.add("marcela");
+        resultDiv.innerHTML = `
+          <div class="result-title">Eres Marcela Valencia 💅</div>
+          <p>Tienes energía elegante, intensa y orgullosa. Te gusta que las cosas salgan bien, sabes poner límites y no cualquiera puede contigo.</p>
+          <p>Aunque a veces parezcas fuerte o seria, en el fondo eres leal, sensible y te importa mucho la gente que quieres.</p>
+          <p><strong>Puntaje:</strong> Marcela ${marcela} / Patricia ${patricia}</p>
+        `;
+      } else if (patricia > marcela) {
+        resultDiv.classList.add("patricia");
+        resultDiv.innerHTML = `
+          <div class="result-title">Eres Patricia Fernández, la peliteñida 💖</div>
+          <p>Tienes energía divertida, dramática y social. Donde llegas, algo pasa. Eres expresiva, entretenida y probablemente sabes todos los chismes sin buscarlos.</p>
+          <p>Tu personalidad tiene carisma, humor y un toque de caos que hace que nadie se aburra contigo.</p>
+          <p><strong>Puntaje:</strong> Patricia ${patricia} / Marcela ${marcela}</p>
+        `;
+      } else {
+        resultDiv.classList.add("mixta");
+        resultDiv.innerHTML = `
+          <div class="result-title">Eres una mezcla de Marcela y Patricia ✨</div>
+          <p>Tienes el orgullo y la elegancia de Marcela, pero también el drama y el carisma de Patricia.</p>
+          <p>Un día eres jefa seria y al otro día eres chisme, risa y caos. Básicamente: equilibrio peligroso.</p>
+          <p><strong>Puntaje:</strong> Marcela ${marcela} / Patricia ${patricia}</p>
+        `;
+      }
+
+      resultDiv.scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>
